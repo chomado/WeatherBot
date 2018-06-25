@@ -6,7 +6,7 @@ namespace OpenWeatherClient
 {
     public class OpenWeather
     {
-        public async Task<string> GetWeather()
+        public async Task<OpenWeatherResult> GetWeatherAsync()
         {
             using (var client = new HttpClient())
             {
@@ -21,8 +21,7 @@ namespace OpenWeatherClient
 
                 // レスポンスのbodyが取れる
                 var json = await response.Content.ReadAsStringAsync();
-
-                return json;
+                return OpenWeatherResult.FromJson(json);
             }
         }
     }
