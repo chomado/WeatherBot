@@ -11,8 +11,9 @@ namespace OpenWeatherClient.Test
         public async Task TestMethod1()
         {
             var openWeather = new OpenWeather();
-            var weatherJson = await openWeather.GetWeatherAsync();
-            Assert.IsNotNull(weatherJson);
+            var weatherData = await openWeather.GetWeatherAsync(cityName: "Tokyo");
+            Assert.IsNotNull(weatherData);
+            Assert.AreEqual(expected: "Tokyo", actual: weatherData.Name);
         }
     }
 }
