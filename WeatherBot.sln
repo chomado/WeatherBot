@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeatherClient", "OpenWeatherClient\OpenWeatherClient.csproj", "{DCC82977-8957-4C6C-8A10-6ADC1F405DE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenWeatherClient", "OpenWeatherClient\OpenWeatherClient.csproj", "{DCC82977-8957-4C6C-8A10-6ADC1F405DE1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeatherClient.Test", "OpenWeatherClient.Test\OpenWeatherClient.Test.csproj", "{583D4F95-8A20-45D4-8CA0-CEC7F31CAF63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeather.Server", "OpenWeather.Server\OpenWeather.Server.csproj", "{B78AC926-D536-4948-8FE0-2081509983D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{583D4F95-8A20-45D4-8CA0-CEC7F31CAF63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{583D4F95-8A20-45D4-8CA0-CEC7F31CAF63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{583D4F95-8A20-45D4-8CA0-CEC7F31CAF63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B78AC926-D536-4948-8FE0-2081509983D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B78AC926-D536-4948-8FE0-2081509983D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B78AC926-D536-4948-8FE0-2081509983D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B78AC926-D536-4948-8FE0-2081509983D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
