@@ -106,12 +106,12 @@ namespace OpenWeather.Server.Request
 
     public partial class DialogflowRequest
     {
-        public static DialogflowRequest FromJson(string json) => JsonConvert.DeserializeObject<DialogflowRequest>(json, OpenWeather.Server.Converter.Settings);
+        public static DialogflowRequest FromJson(string json) => JsonConvert.DeserializeObject<DialogflowRequest>(json, Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this DialogflowRequest self) => JsonConvert.SerializeObject(self, OpenWeather.Server.Converter.Settings);
+        public static string ToJson(this DialogflowRequest self) => JsonConvert.SerializeObject(self, Converter.Settings);
     }
 
     internal static class Converter

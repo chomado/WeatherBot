@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 OpenWeatherClient.Test/Secret.config
+OpenWeather.Server/Properties/PublishProfiles/chomadoOpenWeatherApi - Web Deploy.pubxml

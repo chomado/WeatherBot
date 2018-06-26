@@ -6,6 +6,9 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Newtonsoft.Json;
+using System.Linq;
+using System;
+using OpenWeather.Server.Response;
 
 namespace OpenWeather.Server
 {
@@ -14,17 +17,31 @@ namespace OpenWeather.Server
         [FunctionName("Function1")]
         public static IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]HttpRequest req, TraceWriter log)
         {
-            log.Info("C# HTTP trigger function processed a request.");
-
-            string name = req.Query["name"];
-
-            string requestBody = new StreamReader(req.Body).ReadToEnd();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name = name ?? data?.name;
-
-            return name != null
-                ? (ActionResult)new OkObjectResult($"Hello, {name}")
-                : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
+            return new JsonResult(new Response.DialogflowResponse
+            {
+                Payload = new Response.Payload
+                {
+                    Google = new Response.Google
+                    {
+                        ExpectUserResponse = true,
+                        RichResponse = new Response.RichResponse
+                        {
+                            Items = new[]
+                            {
+                                new Response.Item
+                                {
+                                    SimpleResponse = new Response.SimpleResponse
+                                    {
+                                        TextToSpeech = "ÇøÇÂÇ‹Ç«ÇæÇÊÅI"
+                                    }
+                                }
+                            }
+                        },
+                        UserStorage = "{\"data\":{}}"
+                    },
+                },
+                OutputContexts = Array.Empty<OutputContext>(),
+            });
         }
     }
 }
