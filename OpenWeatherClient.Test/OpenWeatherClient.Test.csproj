@@ -85,9 +85,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OpenWeatherClient\OpenWeatherClient.csproj">
-      <Project>{dcc82977-8957-4c6c-8a10-6adc1f405de1}</Project>
-      <Name>OpenWeatherClient</Name>
+    <ProjectReference Include="..\OpenWeather.Client\OpenWeather.Client.csproj">
+      <Project>{a06da972-6eab-4974-a1e6-1598a0fdb12d}</Project>
+      <Name>OpenWeather.Client</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

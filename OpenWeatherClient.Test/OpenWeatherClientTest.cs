@@ -10,7 +10,7 @@ namespace OpenWeatherClient.Test
         [TestMethod]
         public async Task TestMethod1()
         {
-            var openWeather = new OpenWeather();
+            var openWeather = new OpenWeather.Client.OpenWeather();
             var weatherData = await openWeather.GetWeatherAsync(cityName: "Tokyo");
             Assert.IsNotNull(weatherData);
             Assert.AreEqual(expected: "Tokyo", actual: weatherData.Name);
