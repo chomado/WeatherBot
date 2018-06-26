@@ -4,7 +4,7 @@
 //
 //    var dialogflowResponse = DialogflowResponse.FromJson(jsonString);
 
-namespace OpenWeather.Server.Response
+namespace OpenWeather.ServerFunc.Response
 {
     using System;
     using System.Collections.Generic;

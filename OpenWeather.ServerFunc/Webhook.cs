@@ -1,23 +1,21 @@
-
-using System.IO;
-using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Host;
-using Newtonsoft.Json;
-using System.Linq;
-using System;
-using OpenWeather.Server.Response;
+using OpenWeather.ServerFunc.Response;
 
-namespace OpenWeather.Server
+namespace OpenWeather.ServerFunc
 {
     public static class Webhook
     {
-        [FunctionName("Function1")]
-        public static IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]HttpRequest req, TraceWriter log)
+        [FunctionName("Webhook")]
+        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log)
         {
-            return new JsonResult(new Response.DialogflowResponse
+            return req.CreateResponse(new Response.DialogflowResponse
             {
                 Payload = new Response.Payload
                 {
