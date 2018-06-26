@@ -12,6 +12,7 @@ namespace OpenWeather.ServerFunc.Request
     using System.Globalization;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
+    using Newtonsoft.Json.Linq;
 
     public partial class DialogflowRequest
     {
@@ -38,7 +39,7 @@ namespace OpenWeather.ServerFunc.Request
         public string QueryText { get; set; }
 
         [JsonProperty("parameters")]
-        public Parameters Parameters { get; set; }
+        public JObject Parameters { get; set; }
 
         [JsonProperty("allRequiredParamsPresent")]
         public bool AllRequiredParamsPresent { get; set; }
@@ -95,13 +96,7 @@ namespace OpenWeather.ServerFunc.Request
         public long LifespanCount { get; set; }
 
         [JsonProperty("parameters")]
-        public Parameters Parameters { get; set; }
-    }
-
-    public partial class Parameters
-    {
-        [JsonProperty("param")]
-        public string Param { get; set; }
+        public JObject Parameters { get; set; }
     }
 
     public partial class DialogflowRequest
